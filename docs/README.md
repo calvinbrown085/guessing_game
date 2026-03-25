@@ -10,6 +10,7 @@ The application is a single Rust binary leveraging the `rand` crate for secret n
 
 *   **`Cargo.toml`**: Defines the Rust project's metadata, including its name (`guessing_game`), version, authors, and edition. It declares `rand = "0.3.14"` as a crucial dependency for random number generation.
 *   **`src/main.rs`**: Contains all the game logic. It initializes a secret number using `rand::thread_rng().gen_range(1, 101)`. The `main` function then enters a loop to prompt for user input, read and parse the guess into a `u32` (skipping non-numeric input), and compare it against the `secret_number` using `std::cmp::Ordering`. Feedback ("Too Small!", "Too Big!", or "You Win!") is provided, breaking the loop on a win.
+*   **`docs/`**: This directory contains additional project documentation, including this `README.md`.
 
 ## How to Run
 
