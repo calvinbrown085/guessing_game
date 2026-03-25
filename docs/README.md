@@ -4,20 +4,20 @@ This project is a simple command-line guessing game implemented in Rust. Players
 
 ## Architecture
 
-The application is a single Rust binary that leverages the `rand` crate for generating the secret number and `std::io` for handling user input from the console. The core logic operates within an infinite loop, continuously prompting for guesses, parsing input, comparing the guess to the secret number, and providing immediate feedback. The loop terminates once the correct number is guessed.
+The application is a single Rust binary leveraging the `rand` crate for secret number generation and `std::io` for console input. The core logic executes within an infinite loop, continuously prompting for guesses, parsing input, comparing the guess to the secret number, and providing immediate feedback. The loop terminates upon a correct guess.
 
 ## Key Files
 
-*   **`Cargo.toml`**: This file defines the Rust project's metadata, including its name (`guessing_game`), version, authors, and edition. Crucially, it declares `rand = "0.3.14"` as a dependency, which is used for generating random numbers.
-*   **`src/main.rs`**: This is the main source file containing all the game logic. It initializes a secret number using `rand::thread_rng().gen_range(1, 101)`. The `main` function then enters a loop where it prompts the user for input, reads the guess, attempts to parse it into a `u32` integer (skipping non-numeric input), and compares the guess against the `secret_number` using `std::cmp::Ordering`. Based on the comparison, it prints "Too Small!", "Too Big!", or "You Win!" (at which point the game breaks the loop).
+*   **`Cargo.toml`**: Defines the Rust project's metadata, including its name (`guessing_game`), version, authors, and edition. It declares `rand = "0.3.14"` as a crucial dependency for random number generation.
+*   **`src/main.rs`**: Contains all the game logic. It initializes a secret number using `rand::thread_rng().gen_range(1, 101)`. The `main` function then enters a loop to prompt for user input, read and parse the guess into a `u32` (skipping non-numeric input), and compare it against the `secret_number` using `std::cmp::Ordering`. Feedback ("Too Small!", "Too Big!", or "You Win!") is provided, breaking the loop on a win.
 
 ## How to Run
 
-To run this guessing game, you need to have the Rust toolchain installed.
+To run this guessing game, the Rust toolchain must be installed.
 
 ### Prerequisites
 
-*   **Rust Toolchain**: Install Rust by following the instructions on [rust-lang.org](https://www.rust-lang.org/tools/install). `rustup` is the recommended way to manage Rust installations.
+*   **Rust Toolchain**: Install Rust by following the instructions on [rust-lang.org](https://www.rust-lang.org/tools/install). `rustup` is the recommended installation method.
 
 ### Steps
 
@@ -35,4 +35,4 @@ To run this guessing game, you need to have the Rust toolchain installed.
     ```bash
     cargo run
     ```
-    This command will compile the project and then execute the `guessing_game` binary.
+    This command compiles the project and executes the `guessing_game` binary.
